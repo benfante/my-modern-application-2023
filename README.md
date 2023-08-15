@@ -19,3 +19,5 @@ A present not in a particular order.
 * [Spring Boot Testing — Testcontainers and Flyway](<https://dev.to/kirekov/spring-boot-testing-testcontainers-and-flyway-2jpd>)
 * [Fast, Reliable Integration Tests with Spring Boot and Flyway](<https://aahlenst.dev/blog/fast-reliable-integration-tests-with-spring/>)
 * [Spring Boot & Flyway - clear database between integration tests](<https://maciejwalkowiak.com/blog/spring-boot-flyway-clear-database-integration-tests/>)
+* [Guide to using attached tests](<https://maven.apache.org/guides/mini/guide-attached-tests.html>)
+* [Flyway Database Schema Migrations](<https://vladmihalcea.com/flyway-database-schema-migrations/>)
