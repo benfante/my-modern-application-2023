@@ -2,6 +2,65 @@
 
 A sample application for demonstrating the techniques and tools I currently use in developing an application.
 
+## Application context
+
+The context of the application is not much important. It is a simple application for managing a set of personal contacts. The application is composed of a REST API and a web frontend application.
+
+## The data model
+
+The data model of the application is described in the following diagram.
+
+```mermaid
+classDiagram
+    class Contact {
+        <<entity>>
+        id: Long
+        firstName: String
+        lastName: String
+    }
+    class Address {
+        <<entity>>
+        id: Long
+        street: String
+        city: String
+        zipCode: String
+        country: String
+    }
+    class Email {
+        <<entity>>
+        id: Long
+        address: String
+    }
+    class Phone {
+        <<entity>>
+        id: Long
+        number: String
+    }
+    class ContactUse {
+        <<entity>>
+        id: Long
+        name: String
+    }
+    Contact "1" -- "0..*" Address
+    Contact "1" -- "0..*" Email
+    Contact "1" -- "0..*" Phone
+    Address "0..*" -- "1" ContactUse
+    Email "0..*" -- "1" ContactUse
+    Phone "0..*" -- "1" ContactUse
+    note for ContactUse "The use of a 'destination' by a contact.\n\nFor example: 'Home', 'Primary', 'Work', etc."
+```
+
+## Project modularization
+
+At present the project is composend by a parent Maven project and two modules: `data` and `api`.
+
+The `data` module contains the data model and the JPA-based persistence layer.
+
+The `api` module contains the REST API.
+
+In the future will be added another module for the frontend application (Angular and/or React).
+
+
 ## References
 
 Some documentation, blog articles, StackOverflow questions, code repositories, etc. I consulted for finding solutions to the problems I met in writing this application.
